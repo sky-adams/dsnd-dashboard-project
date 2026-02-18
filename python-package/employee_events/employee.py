@@ -1,9 +1,9 @@
 # Import the QueryBase class
-from query_base import QueryBase
+from .query_base import QueryBase
 
 # Import dependencies needed for sql execution
 # from the `sql_execution` module
-from sql_execution import query
+from .sql_execution import query
 import pandas as pd
 
 
