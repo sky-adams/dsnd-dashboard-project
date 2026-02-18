@@ -44,7 +44,7 @@ class QueryBase:
             return sql_query
 
         data = get_event_counts()
-        columns = ['event_date', 'positive_events', 'negative_events']
+        columns = ['date', 'positive_events', 'negative_events']
         df = pd.DataFrame(data, columns=columns)
         return df
 
