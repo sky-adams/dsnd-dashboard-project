@@ -4,7 +4,7 @@ from functools import wraps
 
 # Using pathlib, create a `db_path` variable
 # that points to the absolute path for the `employee_events.db` file
-db_path = Path('employee_events.db').resolve()
+db_path = Path(__file__).parent / 'employee_events.db'
 
 
 # Leave this code unchanged
