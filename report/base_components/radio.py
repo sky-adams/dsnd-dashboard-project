@@ -22,7 +22,8 @@ class Radio(BaseComponent):
                 value=value,
                 hx_get=self.hx_get,
                 hx_target=self.hx_target,
-                checked="checked" if value == model.name.title() else "")
+                checked=True if value == model.name.title() else False)
+            print(model.name.title())
             label_child = Label(value, _for=value.lower())
             children.append(input_child)
             children.append(label_child)
