@@ -51,7 +51,7 @@ class Employee(QueryBase):
         @query
         def get_username():
             sql_query = f"""
-            SELECT first_name, last_name
+            SELECT CONCAT(first_name, ' ', last_name)
             FROM {self.name}
             WHERE employee_id = {id}
             """
