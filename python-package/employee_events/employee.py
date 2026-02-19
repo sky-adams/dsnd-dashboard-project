@@ -30,7 +30,7 @@ class Employee(QueryBase):
         @query
         def get_names():
             sql_query = f"""
-            SELECT first_name, last_name, employee_id
+            SELECT CONCAT(first_name, ' ', last_name) as full_name, employee_id
             FROM {self.name}
             """
             return sql_query
