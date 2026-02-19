@@ -37,11 +37,10 @@ class QueryBase:
                 f"SELECT ee.event_date, SUM(ee.positive_events), "
                 f"SUM(ee.negative_events) "
                 f"FROM {self.name} "
-                f"JOIN employee_events AS ee ON {self.name}.{id} = ee.{id} "
+                f"JOIN employee_events AS ee ON {self.name}.{self.name}_id = ee.{self.name}_id "
                 f"GROUP BY ee.event_date "
                 f"ORDER BY ee.event_date"
             )
-            return sql_query
 
         data = get_event_counts()
         columns = ['date', 'positive_events', 'negative_events']
