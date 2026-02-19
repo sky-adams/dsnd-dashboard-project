@@ -61,7 +61,7 @@ class Header(BaseComponent):
         # Using the model argument for this method
         # return a fasthtml H1 objects
         # containing the model's name attribute
-        return H1(model.name)
+        return H1(model.name.capitalize() + " Performance: " + model.username(entity_id)[0][0])
 
 
 # Create a subclass of base_components/MatplotlibViz
