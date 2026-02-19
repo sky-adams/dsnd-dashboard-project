@@ -27,7 +27,7 @@ class Team(QueryBase):
         @query
         def get_names():
             sql_query = f"""
-            SELECT team_id, team_name
+            SELECT team_name, team_id
             FROM {self.name}
             """
             return sql_query
