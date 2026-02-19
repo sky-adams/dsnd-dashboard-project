@@ -41,6 +41,7 @@ class QueryBase:
                 f"GROUP BY ee.event_date "
                 f"ORDER BY ee.event_date"
             )
+            return sql_query
 
         data = get_event_counts()
         columns = ['date', 'positive_events', 'negative_events']
@@ -62,7 +63,7 @@ class QueryBase:
             sql_query = f"""
             SELECT note_date, note
             FROM notes
-            JOIN {self.name} ON {self.name}.{id} = notes.{id}
+            JOIN {self.name} ON {self.name}.{self.name}_id = notes.{self.name}_id
             """
             return sql_query
 
