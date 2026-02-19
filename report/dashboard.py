@@ -1,8 +1,9 @@
+# flake8: noqa: F405
 from fasthtml.common import *  # noqa: F403
 import matplotlib.pyplot as plt
 
 # Import QueryBase, Employee, Team from employee_events
-from employee_events import QueryBase, Employee, Team
+from employee_events import Employee, Team
 
 # import the load_model function from the utils.py file
 from utils import load_model
@@ -143,7 +144,7 @@ class BarChart(MatplotlibViz):
 
         # Index the second column of predict_proba output
         # The shape should be (<number of records>, 1)
-        col = probabilities[:,1:2]
+        col = probabilities[:, 1:2]
 
         # Below, create a `pred` variable set to
         # the number we want to visualize
