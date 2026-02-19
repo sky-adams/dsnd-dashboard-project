@@ -38,6 +38,7 @@ class QueryBase:
                 f"SUM(ee.negative_events) "
                 f"FROM {self.name} "
                 f"JOIN employee_events AS ee ON {self.name}.{self.name}_id = ee.{self.name}_id "
+                f"WHERE ee.{self.name}_id = {id} "
                 f"GROUP BY ee.event_date "
                 f"ORDER BY ee.event_date"
             )
@@ -64,6 +65,7 @@ class QueryBase:
             SELECT note_date, note
             FROM notes
             JOIN {self.name} ON {self.name}.{self.name}_id = notes.{self.name}_id
+            WHERE notes.{self.name}_id = {id}
             """
             return sql_query
 
