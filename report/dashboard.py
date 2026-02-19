@@ -158,7 +158,6 @@ class BarChart(MatplotlibViz):
         # of the predict_proba output
         else:
             pred = col[0][0]
-            print(pred)
 
         # Initialize a matplotlib subplot
         fig, ax = plt.subplots()
@@ -171,7 +170,7 @@ class BarChart(MatplotlibViz):
         # pass the axis variable
         # to the `.set_axis_styling`
         # method
-        self.set_axis_styling(ax)
+        self.set_axis_styling(ax, bordercolor='black', fontcolor='black')
 
 
 # Create a subclass of combined_components/CombinedComponent
