@@ -1,15 +1,17 @@
+# Employee and Team Performance Dashboard
 
-# Software Engineering for Data Scientists 
+## Description
+The Employee and Team Performance Dashboard is a FastHTML-powered web application that 
+visualizes trends in positive and negative events, information about the events, and a 
+prediction of the recruitment risk using a machine learning model. The dashboard connects 
+to a SQL database and supports both team-level and individual-level analysis.
 
-This repository contains starter code for the **Software Engineering for Data Scientists** final project. Please reference your course materials for documentation on this repository's structure and important files. Happy coding!
-
-### Repository Structure
+## Repository Structure
 ```
 ├── README.md
 ├── assets
 │   ├── model.pkl
 │   └── report.css
-├── env
 ├── python-package
 │   ├── employee_events
 │   │   ├── __init__.py
@@ -35,12 +37,24 @@ This repository contains starter code for the **Software Engineering for Data Sc
 │   ├── dashboard.py
 │   └── utils.py
 ├── requirements.txt
-├── start
 ├── tests
     └── test_employee_events.py
 ```
 
-### employee_events.db
+## Usage
+1. Download or clone this repository.
+2. Build the employee_events package.
+	1. Navigate to the python-package directory within the repository.
+	2. Run `python setup.py sdist`.
+3. Install the necessary packages.
+	1. Navigate to the root directory of the repository.
+	2. Run `pip install -r requirements.txt`.
+4. Start the web server.
+	1. Navigate to the report directory within the repository.
+	2. Run `python dashboard.py`.
+5. View the dashboard by going to http://127.0.0.1:5001/ in a browser.
+
+## Database (employee_events.db)
 
 ```mermaid
 erDiagram
@@ -79,3 +93,8 @@ erDiagram
   employee ||--o{ employee_events : "employee_id"
   notes }o--o{ employee_events : ""
 ```
+
+### Credits 
+
+This project was built using starter code for Udacity's **Software Engineering for Data 
+Scientists** course final project.
